@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="default" extends="struts-default">
+		<action name="Login">
+			<result>/Login.jsp</result>
+		</action>
+		
+		<action name="Lend" class="LoginAction" method="login">
+			<result name="studentSuccess">/Lend.jsp</result>
+			<result name="managerSuccess">/BookOperation.jsp</result>
+			<result name="error">/Failed.jsp</result>
+			<result name="input">/Login.jsp</result>
+		</action>
+		
+		<action name="selectBooks" class="LendAction" method="selectAllLend">
+			<result name="input">/Lend.jsp</result>
+			<result name="success">/SelectBooks.jsp</result>
+		</action>
+		
+		<action name="lendBooks" class="LendAction" method="lendBook">
+			<result name="input">/SelectBooks.jsp</result>
+			<result name="success">/SelectBooks.jsp</result>
+		</action>
+		
+		<action name="book" class="BooksAction">
+			<result name="success">/BookOperation.jsp</result> 
+			<result name="input">/BookOperation.jsp</result>
+		</action>
+		
+		<action name="book1" class="BooksAction" method="queryAllBooks">
+			<result name="success">/QueryAllBooks.jsp</result> 
+			<result name="input">/BookOperation.jsp</result>
+		</action>
+	</package>
+	
+</struts>   
